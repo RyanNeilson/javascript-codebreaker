@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Codebreaker</title>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<link rel="stylesheet" href="mastermind.css">
+			<link href="https://fonts.googleapis.com/css?family=Michroma" rel="stylesheet">
+			<script src="codebreaker.js"></script> 
+		</head>
+		<body id="body">
+			<div id="header">
+				<h1>CODEBREAKER:</h1>
+				<h4>A <em>Mastermind</em> Clone</h4>
+			</div>
+			<div class="col-1">
+				<!--Instructions-->
+				<p><strong>How To Play</strong>: <br><br>When a user clicks the start button,
+					the computer generates a random 4-color code with red, blue, green, yellow, black, and 
+					white as possibilities.<br><br> The user's task is to guess the code, which remains hidden until solved. 
+					*note: In this version of the game, colors will <em>not</em> be repeated in the generated code.<br><br>
+					The user inputs a guess using the selector buttons to the right of the screen (or at the bottom on 
+					smaller, mobile devices). The buttons each correspond to the same-numbered column in the game board.<br><br>
+					The user clicks "Submit" after choosing the four different colors he/she wishes to guess.<br><br>
+					The submitted guess will appear in the first vacant row of the gameboard.<br><br>
+					The last column of the gameboard will then display feedback related to the user's guess. 
+					The <strong>first</strong> number indicates the user has that number of colors correct, <em>and</em>
+					those colors are correctly positioned on the board. The <strong>second</strong> number indicates the user
+					has that number of colors correct, but those colors are <em>incorrectly</em> positioned on the board.<br><br>
+					<strong>End of the game</strong>: The game is over when the user guesses the code correctly, or when the user 
+					has made 12 unsuccessful attempts at guessing the code. 
+		        </p>
+				
+				
+
+			</div>
+			<div class="col-2">
+				<!--Game Board-->
+				<table id="gameboard">
+				<th colspan="5">CODEBREAKER</th>
+				<tr id="r0">
+					<td class="c1">1</td>
+					<td class="c2">2</td>
+					<td class="c3">3</td>
+					<td class="c4">4</td>
+					<td class="c5"></td>
+				</tr>
+					
+				<tr id="r1">
+					<td><img src="images/peg-hole.png" id="10"></td>
+					<td><img src="images/peg-hole.png" id="11"></td>
+					<td><img src="images/peg-hole.png" id="12"></td>
+					<td><img src="images/peg-hole.png" id="13"></td>
+					<td class="c5" id="14"></td>
+				</tr>
+				<tr id="r2">
+					<td><img src="images/peg-hole.png" id="20"></td>
+					<td><img src="images/peg-hole.png" id="21"></td>
+					<td><img src="images/peg-hole.png" id="22"></td>
+					<td><img src="images/peg-hole.png" id="23"></td>
+					<td class="c5" id="24"></td>
+				</tr>
+				<tr id="r3">
+					<td><img src="images/peg-hole.png" id="30"></td>
+					<td><img src="images/peg-hole.png" id="31"></td>
+					<td><img src="images/peg-hole.png" id="32"></td>
+					<td><img src="images/peg-hole.png" id="33"></td>
+					<td class="c5" id="34"></td>
+				</tr>
+				<tr id="r4">
+					<td><img src="images/peg-hole.png" id="40"></td>
+					<td><img src="images/peg-hole.png" id="41"></td>
+					<td><img src="images/peg-hole.png" id="42"></td>
+					<td><img src="images/peg-hole.png" id="43"></td>
+					<td class="c5" id="44"></td>
+				</tr>
+				<tr id="r5">
+					<td><img src="images/peg-hole.png" id="50"></td>
+					<td><img src="images/peg-hole.png" id="51"></td>
+					<td><img src="images/peg-hole.png" id="52"></td>
+					<td><img src="images/peg-hole.png" id="53"></td>
+					<td class="c5" id="54"></td>
+				</tr>
+				<tr id="r6">
+					<td><img src="images/peg-hole.png" id="60"></td>
+					<td><img src="images/peg-hole.png" id="61"></td>
+					<td><img src="images/peg-hole.png" id="62"></td>
+					<td><img src="images/peg-hole.png" id="63"></td>
+					<td class="c5" id="64"></td>
+				</tr>
+				<tr id="r7">
+					<td><img src="images/peg-hole.png" id="70"></td>
+					<td><img src="images/peg-hole.png" id="71"></td>
+					<td><img src="images/peg-hole.png" id="72"></td>
+					<td><img src="images/peg-hole.png" id="73"></td>
+					<td class="c5" id="74"></td>
+				</tr>
+				<tr id="r8">
+					<td><img src="images/peg-hole.png" id="80"></td>
+					<td><img src="images/peg-hole.png" id="81"></td>
+					<td><img src="images/peg-hole.png" id="82"></td>
+					<td><img src="images/peg-hole.png" id="83"></td>
+					<td class="c5" id="84"></td>
+				</tr>
+				<tr id="r9">
+					<td><img src="images/peg-hole.png" id="90"></td>
+					<td><img src="images/peg-hole.png" id="91"></td>
+					<td><img src="images/peg-hole.png" id="92"></td>
+					<td><img src="images/peg-hole.png" id="93"></td>
+					<td class="c5" id="94"></td>
+				</tr>
+				<tr id="r10">
+					<td><img src="images/peg-hole.png" id="100"></td>
+					<td><img src="images/peg-hole.png" id="101"></td>
+					<td><img src="images/peg-hole.png" id="102"></td>
+					<td><img src="images/peg-hole.png" id="103"></td>
+					<td class="c5" id="104"></td>
+				</tr>
+				<tr id="r11">
+					<td><img src="images/peg-hole.png" id="110"></td>
+					<td><img src="images/peg-hole.png" id="111"></td>
+					<td><img src="images/peg-hole.png" id="112"></td>
+					<td><img src="images/peg-hole.png" id="113"></td>
+					<td class="c5" id="114"></td>
+				</tr>
+				<tr id="r12">
+					<td><img src="images/peg-hole.png" id="120"></td>
+					<td><img src="images/peg-hole.png" id="121"></td>
+					<td><img src="images/peg-hole.png" id="122"></td>
+					<td><img src="images/peg-hole.png" id="123"></td>
+					<td class="c5" id="124"></td>
+				</tr>
+				<tr id="r13">
+					<td class="c1">1</td>
+					<td class="c2">2</td>
+					<td class="c3">3</td>
+					<td class="c4">4</td>
+					<td class="c5"></td>
+				</tr>
+				
+				
+			</table>
+			
+			
+			
+				
+			</div>
+			
+			<div class="col-3">
+				<div id="selectors">
+				<!--Color Selectors-->
+			<div >Color 1:
+				<select id="color1">
+					<option value="0">Red</option>
+					<option value="1">Blue</option>
+					<option value="2">Green</option>
+					<option value="3">Yellow</option>
+					<option value="4">Black</option>
+					<option value="5">White</option>
+				</select>
+			</div>
+			<div>Color 2:
+				<select id="color2">
+					<option value="0">Red</option>
+					<option value="1">Blue</option>
+					<option value="2">Green</option>
+					<option value="3">Yellow</option>
+					<option value="4">Black</option>
+					<option value="5">White</option>
+				</select>
+			</div>
+			<div>Color 3:
+				<select id="color3">
+					<option value="0">Red</option>
+					<option value="1">Blue</option>
+					<option value="2">Green</option>
+					<option value="3">Yellow</option>
+					<option value="4">Black</option>
+					<option value="5">White</option>
+				</select>
+			</div>
+			<div>Color 4:
+				<select id="color4">
+					<option value="0">Red</option>
+					<option value="1">Blue</option>
+					<option value="2">Green</option>
+					<option value="3">Yellow</option>
+					<option value="4">Black</option>
+					<option value="5">White</option>
+				</select>
+			</div>
+			
+			</div>
+			
+			<br><br>
+				<input type="button" value="Submit Guess" onclick="checkInput()" id="guess" disabled=true;>
+			<br><br><br>
+				<input type="button" value="Start!" onclick="generateCode()" id="start">
+			<br><br><br>
+				<input type="button" value="Reset"	onclick="resetPage()" id="reset">
+				
+				<p id="gameOver"></p>
+				<p id="checkInput"></p>
+				
+				
+			</div>
+			
+		</body>
+	</html>
